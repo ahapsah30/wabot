@@ -77,13 +77,13 @@ class WABot():
 
    
 
-    def eko1(self, chatID):
+    def korona(self, chatID):
         for message in self.dict_messages:
             text = message['body'] 
             data = {
-                  "body": 'https://litu.gdunli.workers.dev/tes/ECKO_SHOW_Mantan_Sombong_Music_Video_feat._LIL_ZI_.mp4',
-                  "caption" : 'ECKO SHOW - Mantan Sombong',
-                  "filename": 'mp4',
+                  "body": 'https://pbs.twimg.com/media/EfS-sXmUcAEKXKd?format=jpg',
+                  "caption" : "Assalamu'alaikum, Sahabat Sehat...\n. \nUpdate situasi Covid-19 di Provinsi Gorontalo dan sebaran per kabupaten/kota, 13 Agustus 2020 Pkl. 13.00 Wita.\n. \nUpdate lengkap silahkan cek melalui situs :\n\nhttp://dinkes.gorontaloprov.go.id/covid-19",
+                  "filename": 'jpg',
                   "chatId": chatID
                   }
 
@@ -115,8 +115,8 @@ class WABot():
                     
                     
                    
-                    elif text[0].lower() == 'mantansombong':
-                        return self.eko1(id)
+                    elif text[0].lower() == 'sk':
+                        return self.korona(id)
                   
                     
                     
