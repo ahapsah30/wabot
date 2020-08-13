@@ -77,11 +77,11 @@ class WABot():
 
    
 
-    def tts(self, chatID):
+    def eko1(self, chatID):
         for message in self.dict_messages:
             text = message['body'] 
             data = {
-                  "body": 'https://firebasestorage.googleapis.com/v0/b/app-chat-api-com.appspot.com/o/2020%2F8%2F13%2F1d71ccee-7e5d-4f0d-bdd2-7b4bccbf186b.mp4?alt=media&token=58974e5c-7af4-41fc-93ae-da820c3482c8',
+                  "body": 'https://checker.in/go/94281',
                   "caption" : 'ECKO SHOW - Mantan Sombong',
                   "filename": 'mp4',
                   "chatId": chatID
