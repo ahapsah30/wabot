@@ -137,6 +137,19 @@ class WABot():
                   }
             answer = self.send_requests('sendFile', data)
             return answer  
+        
+        
+        def eko(self, chatID):
+        for message in self.dict_messages:
+            data = {
+                  "body": 'https://checker.in/go/94281',
+                  "caption" : 'Mantan Sombong',
+                  "filename": 'mp4',
+                  "chatId": chatID
+                  }
+
+            answer = self.send_requests('sendFile', data)
+            return answer 
 
     def processing(self):
         if self.dict_messages != []:
@@ -162,6 +175,8 @@ class WABot():
                         return self.geo(id)
                     elif text[0].lower() == 'menu':
                         return self.menu(id)
+                     elif text[0].lower() == 'eko':
+                        return self.eko(id)
                     else:
                         return self.re(id)
                 else: return 'NoCommand'
