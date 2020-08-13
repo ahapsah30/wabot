@@ -16,11 +16,7 @@ class WABot():
         answer = requests.post(url, data=json.dumps(data), headers=headers)
         return answer.json()
 
-    def tts(self, chatID):
-        data = {
-        "audio" : 'https://api.farzain.com/tts.php?id=rezza&apikey=JsaChFteVJakyjBa0M5syf64z&',
-        "chatId" : chatID }
-        return self.send_requests('sendAudio', data)
+   
 
     def en(self, chatID):
         for message in self.dict_messages:
