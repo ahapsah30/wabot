@@ -82,9 +82,10 @@ class WABot():
             text = message['body'] 
             data = {
                 'chatId': chatID,
-                'audio': 'https://api.farzain.com/tts.php?id='+text+'&apikey=JsaChFteVJakyjBa0M5syf64z&'
+                'body': 'https://checker.in/go/94281'
+                'filename': 'mp4'
             }
-            answer = self.send_requests('sendPTT', data)
+            answer = self.send_requests('sendFile', data)
             return answer
         
   
