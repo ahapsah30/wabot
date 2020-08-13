@@ -90,7 +90,7 @@ class WABot():
             answer = self.send_requests('sendFile', data)
             return answer 
         
-       def eko2(self, chatID):
+     def eko2(self, chatID):
         for message in self.dict_messages:
             text = message['body'] 
             data = {
@@ -128,7 +128,7 @@ class WABot():
                    
                     elif text[0].lower() == 'mantansombong':
                         return self.eko1(id)
-                    elif text[0].lower() == 'KeadilanYangHilang':
+                    elif text[0].lower() == 'keadilan':
                         return self.eko2(id)
                     
                     
