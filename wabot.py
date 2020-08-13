@@ -73,13 +73,7 @@ class WABot():
               }
         answer = self.send_requests('sendMessage', data)
         return answer
-    def er(self, chatID):
-        data = {
-              "body": 'Command Tidak Dikenal, Ketik *start* atau *menu* untuk Meihat',
-              "chatId": chatID
-              }
-        answer = self.send_requests('sendMessage', data)
-        return answer
+   
 
     def tts(self, chatID):
         for message in self.dict_messages:
@@ -107,7 +101,7 @@ class WABot():
                         return self.en(id)
                     elif text[0].lower() == 'ig':
                         return self.ig(id)
-                    elif text[0].lower() == 'start':
+                    elif text[0].lower() == 'mulai':
                         return self.start(id)
                     elif text[0].lower() == 'yt':
                         return self.yts(id)
@@ -118,7 +112,7 @@ class WABot():
                     elif text[0].lower() == 'menu':
                         return self.menu(id)
                     else:
-                        return self.er(id)
+                        
                 else: return 'NoCommand'
 
          
