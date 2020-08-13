@@ -6,8 +6,8 @@ class WABot():
     def __init__(self, json):
         self.json = json
         self.dict_messages = json['messages']
-        self.APIUrl = 'https://eu81.chat-api.com/instance133843/'
-        self.token = '8r40flia6zqtu8io'
+        self.APIUrl = 'https://eu104.chat-api.com/instance161053/'
+        self.token = '3wzj1xyi9yhiiye4'
         print(self.dict_messages)
    
     def send_requests(self, method, data):
@@ -16,11 +16,16 @@ class WABot():
         answer = requests.post(url, data=json.dumps(data), headers=headers)
         return answer.json()
 
-    def tts(self, chatID):
-        data = {
-        "audio" : 'https://api.farzain.com/tts.php?id=rezza&apikey=JsaChFteVJakyjBa0M5syf64z&',
-        "chatId" : chatID }
-        return self.send_requests('sendAudio', data)
+    def vidio1(self, chatID):
+       data = {
+        "chatId" : chatId,
+        "body": 'https://litu.gdunli.workers.dev/Multimedia/MP3/Ubur%20Ubur%20Ikan%20Lele%20CD%201%20TRACK%201%20(320).mp3',
+        "filename" : 'mp3',
+        "caption" : 'Ubur Ubur Ikan Lele'
+            }
+        answer = self.send_requests('sendFile', data)
+        return answer
+
 
     def en(self, chatID):
         for message in self.dict_messages:
@@ -61,30 +66,11 @@ class WABot():
                 answer = self.send_requests('sendMessage', data)
                 return answer
 
-    def yts(self, chatID):
-        for message in self.dict_messages:
-            text = message['body']
-            import requests as r
-            import json
-            par = text[3:]
-            req= r.get('http://api.farzain.com/yt_search.php?id='+par+'&apikey=JsaChFteVJakyjBa0M5syf64z&')
-            js1 = req.json()[1]['title']
-            js2 = req.json()[1]['url']
-            js3 = req.json()[1]['videoThumbs']
-            js4 = req.json()[1]['videoId']
-            data = {
-                  "body": js3,
-                  "caption" : '🔎 *Hasil Pencarian Youtube Acak*\n\n*Judul Video* : '+js1+'\n\n*Url Video* : '+js2+'\n\n*Video ID* : '+js4,
-                  "filename": 'jpg',
-                  "chatId": chatID
-                  }
 
-            answer = self.send_requests('sendFile', data)
-            return answer 
 
     def start(self, chatID):
         data = {
-            "body": "🤖 _Halo Saya Adalah Recsec Bot, Ada Yang Bisa Saya Bantu?_\n\n*Admin :*\n\n📞 : 085885105039\n📱 : _fb.me/rezzapriatna12_ \n\n🚀 *Fitur* \n\n✅ _Youtube Downloader_ \n✅ _Facebook Downloader_ \n✅ _Instagram Downloader_ \n✅ _Google Search_ \n✅ _Text To Speech_ \n✅ _Stalking Profil Instagram_ \n✅ _Translate_ \n\n\n _Untuk Menampilkan Command Ketik_ *Menu*",
+            "body": "🤖 _Halo Saya Adalah Whatsapp Bot, Ada Yang Bisa Saya Bantu?_\n\n*Admin :*\n\n📞 : +62 85155477031\n📱 : _fb.me/haliddjubu_ \n\n🚀 *Fitur* \n\n\n✅ _Pencarian Google_ \n✅ _Terjemahan_ \n\n\n _Untuk Menampilkan Command Ketik_ *Menu*",
             "chatId": chatID
         }
         answer = self.send_requests('sendMessage', data)
@@ -92,19 +78,13 @@ class WABot():
 
     def menu(self, chatID):
         data = {
-              "body": '*List Of Command* :\n\n🔖 *yt* _query_ ( Mencari Video Youtube )\n🔖 *ig* _username_ ( Melihat Profil Instagram )\n🔖 *gs* _query_ ( Mencari Google Acak )\n🔖 *tr-id* _text_ ( Translate EN-ID )\n🔖 *tr-en* _text_ ( Translate ID-EN )',
+              "body": "*Daftar Perintah* :\n\n\n🔖 *gs* _pertanyaan_ ( Mencari Google Acak )\n🔖 *tr-id* _text_ ( Translate EN-ID )\n🔖 *tr-en* _text_ ( Translate ID-EN )",
               "chatId": chatID
               }
         answer = self.send_requests('sendMessage', data)
         return answer
 
-    def er(self, chatID):
-        data = {
-              "body": 'Command Tidak Dikenal, Ketik *start* atau *menu* untuk Meihat',
-              "chatId": chatID
-              }
-        answer = self.send_requests('sendMessage', data)
-        return answer
+   
 
     def tts(self, chatID):
         for message in self.dict_messages:
@@ -116,27 +96,7 @@ class WABot():
             answer = self.send_requests('sendPTT', data)
             return answer
     
-    def ig(self, chatID):
-        for message in self.dict_messages:
-            text = message['body']
-            tex = message['senderName']
-            import requests as r
-            import json
-            par = text[3:]
-            req= r.get('https://www.instagram.com/'+par+'/?__a=1')
-            js1 = req.json()["graphql"]["user"]["biography"]
-            js2 = req.json()["graphql"]["user"]["full_name"]
-            js3 = req.json()["graphql"]["user"]["edge_followed_by"]["count"]
-            js4 = req.json()["graphql"]["user"]["edge_follow"]["count"]
-            js5 = req.json()["graphql"]["user"]["profile_pic_url_hd"]
-            data = {
-                  "body": js5,
-                  "caption" : '🔎 *Hasil Pencarian Instagram* \n\n*Username* : '+par+'\n*Nama* : '+str(js2)+'\n*Bio* : '+str(js1)+'\n*Followers* : '+str(js3)+'\n*Following* :'+str(js4),
-                  "filename": 'png',
-                  "chatId": chatID
-                  }
-            answer = self.send_requests('sendFile', data)
-            return answer  
+    
 
     def processing(self):
         if self.dict_messages != []:
@@ -162,17 +122,7 @@ class WABot():
                         return self.geo(id)
                     elif text[0].lower() == 'menu':
                         return self.menu(id)
-                    else:
-                        return self.er(id)
+                    elif text[0].lower() == 'uburubur':
+                        return self.vidio1(id)
+                    
                 else: return 'NoCommand'
-
-            
-
-
-
-        
-        
-
-
-
-
