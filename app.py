@@ -9,7 +9,7 @@ def hello():
     return "Status Online"
 
 
-@app.route('/home', methods=['POST'])
+@app.route('/', methods=['POST'])
 def home():
     if request.method == 'POST':
         bot = WABot(request.json)
