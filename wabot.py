@@ -163,7 +163,7 @@ class WABot():
                     elif text[0].lower() == 'menu':
                         return self.menu(id)
                     else:
-                        return self.re(id)
+                        return 'NoCommand'
                 else: return 'NoCommand'
 
            
