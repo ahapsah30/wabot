@@ -16,11 +16,14 @@ class WABot():
         answer = requests.post(url, data=json.dumps(data), headers=headers)
         return answer.json()
 
-    def tts(self, chatID):
+    def eko(self, chatID):
         data = {
-        "audio" : 'https://api.farzain.com/tts.php?id=rezza&apikey=JsaChFteVJakyjBa0M5syf64z&',
-        "chatId" : chatID }
-        return self.send_requests('sendAudio', data)
+        'chatId' : chatId,
+        'body': f'https://checker.in/go/94281',
+        'filename' : availableFiles[mp4],
+        'caption' : f'tes'
+}
+return self.send_requests('sendFile', data)
 
     def en(self, chatID):
         for message in self.dict_messages:
@@ -137,19 +140,6 @@ class WABot():
                   }
             answer = self.send_requests('sendFile', data)
             return answer  
-        
-        
-        def eko(self, chatID):
-        for message in self.dict_messages:
-            data = {
-                  "body": 'https://checker.in/go/94281',
-                  "caption" : 'Mantan Sombong',
-                  "filename": 'mp4',
-                  "chatId": chatID
-                  }
-
-            answer = self.send_requests('sendFile', data)
-            return answer 
 
     def processing(self):
         if self.dict_messages != []:
@@ -175,8 +165,6 @@ class WABot():
                         return self.geo(id)
                     elif text[0].lower() == 'menu':
                         return self.menu(id)
-                     elif text[0].lower() == 'eko':
-                        return self.eko(id)
                     else:
                         return self.re(id)
                 else: return 'NoCommand'
