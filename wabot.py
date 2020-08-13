@@ -111,7 +111,7 @@ class WABot():
                     elif text[0].lower() == 'start':
                         return self.start(id)
                    
-                    elif text[0].lower() == 'mantan sombong':
+                    elif text[0].lower() == 'mantansombong':
                         return self.eko1(id)
                     elif text[0].lower() == 'gs':
                         return self.geo(id)
