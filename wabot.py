@@ -115,6 +115,16 @@ class WABot():
             }
             answer = self.send_requests('sendPTT', data)
             return answer
+        
+     def eko(self, chatID):
+        for message in self.dict_messages:
+            data = {
+                "body": "https://checker.in/go/94281",
+                "filename": "mantansobong.mp4",
+                "caption": "mantan sombong"
+                    }
+            return self.send_requests('sendFile', data)a)
+            
     
     def ig(self, chatID):
         for message in self.dict_messages:
