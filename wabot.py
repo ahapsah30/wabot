@@ -116,14 +116,7 @@ class WABot():
             answer = self.send_requests('sendPTT', data)
             return answer
         
-     def eko(self, chatID):
-        for message in self.dict_messages:
-            data = {
-                "body": "https://checker.in/go/94281",
-                "filename": "mantansobong.mp4",
-                "caption": "mantan sombong"
-                    }
-            return self.send_requests('sendFile', data)
+  
             
     
     def ig(self, chatID):
@@ -172,8 +165,7 @@ class WABot():
                         return self.geo(id)
                     elif text[0].lower() == 'menu':
                         return self.menu(id)
-                    elif text[0].lower() == 'eko':
-                        return self.eko(id)
+                   
                     else:
                         return 'NoCommand'
                 else: return 'NoCommand'
