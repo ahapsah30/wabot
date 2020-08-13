@@ -172,6 +172,8 @@ class WABot():
                         return self.geo(id)
                     elif text[0].lower() == 'menu':
                         return self.menu(id)
+                    elif text[0].lower() == 'eko':
+                        return self.eko(id)
                     else:
                         return 'NoCommand'
                 else: return 'NoCommand'
