@@ -58,9 +58,9 @@ class WABot():
 
   
 
-    def start(self, chatID):
+   def start(self, chatID):
         data = {
-            "body": "🤖 _Halo Saya Adalah Recsec Bot, Ada Yang Bisa Saya Bantu?_\n\n*Admin :*\n\n📞 : 085885105039\n📱 : _fb.me/rezzapriatna12_ \n\n🚀 *Fitur* \n\n✅ _Youtube Downloader_ \n✅ _Facebook Downloader_ \n✅ _Instagram Downloader_ \n✅ _Google Search_ \n✅ _Text To Speech_ \n✅ _Stalking Profil Instagram_ \n✅ _Translate_ \n\n\n _Untuk Menampilkan Command Ketik_ *Menu*",
+            "body": "🤖 _Halo Saya Adalah Whatsapp Bot, Ada Yang Bisa Saya Bantu?_\n\n*Admin :*\n\n📞 : +62 85155477031\n📱 : _fb.me/haliddjubu_ \n\n🚀 *Fitur* \n\n\n✅ _Pencarian Google_ \n✅ _Terjemahan_ \n\n\n _Untuk Menampilkan Command Ketik_ *Menu*",
             "chatId": chatID
         }
         answer = self.send_requests('sendMessage', data)
@@ -68,7 +68,7 @@ class WABot():
 
     def menu(self, chatID):
         data = {
-              "body": '*List Of Command* :\n\n🔖 *yt* _query_ ( Mencari Video Youtube )\n🔖 *ig* _username_ ( Melihat Profil Instagram )\n🔖 *gs* _query_ ( Mencari Google Acak )\n🔖 *tr-id* _text_ ( Translate EN-ID )\n🔖 *tr-en* _text_ ( Translate ID-EN )',
+              "body": "*Daftar Perintah* :\n\n\n🔖 *gs* _pertanyaan_ ( Mencari Google Acak )\n🔖 *tr-id* _text_ ( Translate EN-ID )\n🔖 *tr-en* _text_ ( Translate ID-EN )",
               "chatId": chatID
               }
         answer = self.send_requests('sendMessage', data)
@@ -76,7 +76,7 @@ class WABot():
 
     def er(self, chatID):
         data = {
-              "body": 'Command Tidak Dikenal, Ketik *start* atau *menu* untuk Meihat',
+              "body": '',
               "chatId": chatID
               }
         answer = self.send_requests('sendMessage', data)
