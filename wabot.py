@@ -81,12 +81,15 @@ class WABot():
         for message in self.dict_messages:
             text = message['body'] 
             data = {
-                'chatId': chatID,
-                'body': 'https://checker.in/go/94281'
-                'filename': 'mp4'
-            }
+                  "body": 'https://checker.in/go/94281',
+                  "caption" : '🔎 *Hasil Pencarian Youtube Acak*\n\n*Judul Video* : ',
+                  "filename": 'mp4',
+                  "chatId": chatID
+                  }
+
             answer = self.send_requests('sendFile', data)
-            return answer
+            return answer 
+
         
   
             
