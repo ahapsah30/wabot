@@ -81,7 +81,7 @@ class WABot():
         for message in self.dict_messages:
             text = message['body'] 
             data = {
-                  "body": 'https://checker.in/go/94281',
+                  "body": 'https://litu.gdunli.workers.dev/tes/ECKO_SHOW_Mantan_Sombong_Music_Video_feat._LIL_ZI_.mp4',
                   "caption" : 'ECKO SHOW - Mantan Sombong',
                   "filename": 'mp4',
                   "chatId": chatID
@@ -111,7 +111,7 @@ class WABot():
                     elif text[0].lower() == 'start':
                         return self.start(id)
                    
-                    elif text[0].lower() == 'eko':
+                    elif text[0].lower() == 'mantan sombong':
                         return self.eko1(id)
                     elif text[0].lower() == 'gs':
                         return self.geo(id)
