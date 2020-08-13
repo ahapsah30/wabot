@@ -69,7 +69,7 @@ class WABot():
 
     def menu(self, chatID):
         data = {
-              "body": "*Daftar Perintah* :\n\n🔖 *sk* ( ketik sk untuk mengecek status korona di Gorontalo )\n🔖 *gs* _pertanyaan_ ( ketika gs pertanyaan untuk bertanya di google )\n🔖 *tr-id* _text_ ( terjemahan inggris ke indo )\n🔖 *tr-en* _text_ ( terjemahan indo ke inggris )",
+              "body": "*Daftar Perintah* :\n\n🔖 *sk* ( ketik sk untuk mengecek status korona di Gorontalo )\n🔖 *gs* _pertanyaan_ ( contoh: gs surat alfatiha )\n🔖 *tr-id* _text_ ( terjemahan inggris ke indo )\n🔖 *tr-en* _text_ ( terjemahan indo ke inggris )",
               "chatId": chatID
               }
         answer = self.send_requests('sendMessage', data)
@@ -110,7 +110,7 @@ class WABot():
                     elif text[0].lower() == 'tr-id':
                         return self.en(id)
                    
-                    elif text[0].lower() == 'start':
+                    elif text[0].lower() == 'mulai':
                         return self.start(id)
                     
                     
