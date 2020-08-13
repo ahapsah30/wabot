@@ -16,14 +16,11 @@ class WABot():
         answer = requests.post(url, data=json.dumps(data), headers=headers)
         return answer.json()
 
-    def eko(self, chatID):
+    def tts(self, chatID):
         data = {
-        'chatId' : chatId,
-        'body': f'https://checker.in/go/94281',
-        'filename' : availableFiles[mp4],
-        'caption' : f'tes'
-}
-return self.send_requests('sendFile', data)
+        "audio" : 'https://api.farzain.com/tts.php?id=rezza&apikey=JsaChFteVJakyjBa0M5syf64z&',
+        "chatId" : chatID }
+        return self.send_requests('sendAudio', data)
 
     def en(self, chatID):
         for message in self.dict_messages:
