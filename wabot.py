@@ -76,7 +76,7 @@ class WABot():
 
     def er(self, chatID):
         data = {
-              "body": '',
+              "body": 'Command Tidak Dikenal, Ketik *start* atau *menu* untuk Meihat',
               "chatId": chatID
               }
         answer = self.send_requests('sendMessage', data)
