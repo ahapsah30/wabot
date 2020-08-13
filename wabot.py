@@ -61,7 +61,7 @@ class WABot():
 
     def start(self, chatID):
         data = {
-            "body": "🤖 _Halo Saya Adalah Whatsapp Bot, Ada Yang Bisa Saya Bantu?_\n\n*Admin :*\n\n📞 : +62 85155477031\n📱 : _fb.me/haliddjubu_ \n\n🚀 *Fitur* \n\n\n✅ _Pencarian Google_ \n✅ _Terjemahan_ \n\n\n _Untuk Menampilkan perintah Ketik_ *Menu*",
+            "body": "🤖 _Halo Saya Adalah Whatsapp Bot, Ada Yang Bisa Saya Bantu?_\n\n*Admin :*\n\n📞 : +62 85155477031\n📱 : _fb.me/haliddjubu_ \n\n🚀 *Fitur* \n\n\n✅ _Status Korona Di Gorontalo_ \n✅ _Pencarian Google_ \n✅ _Terjemahan_ \n\n\n _Untuk Menampilkan perintah Ketik_ *Menu*",
             "chatId": chatID
         }
         answer = self.send_requests('sendMessage', data)
