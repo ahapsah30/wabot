@@ -75,13 +75,7 @@ class WABot():
         answer = self.send_requests('sendMessage', data)
         return answer
 
-    def er(self, chatID):
-        data = {
-              "body": 'Command Tidak Dikenal, Ketik *start* atau *menu* untuk Meihat',
-              "chatId": chatID
-              }
-        answer = self.send_requests('sendMessage', data)
-        return answer
+   
 
     def tts(self, chatID):
         for message in self.dict_messages:
@@ -96,28 +90,7 @@ class WABot():
   
             
     
-    def ig(self, chatID):
-        for message in self.dict_messages:
-            text = message['body']
-            tex = message['senderName']
-            import requests as r
-            import json
-            par = text[3:]
-            req= r.get('https://www.instagram.com/'+par+'/?__a=1')
-            js1 = req.json()["graphql"]["user"]["biography"]
-            js2 = req.json()["graphql"]["user"]["full_name"]
-            js3 = req.json()["graphql"]["user"]["edge_followed_by"]["count"]
-            js4 = req.json()["graphql"]["user"]["edge_follow"]["count"]
-            js5 = req.json()["graphql"]["user"]["profile_pic_url_hd"]
-            data = {
-                  "body": js5,
-                  "caption" : '🔎 *Hasil Pencarian Instagram* \n\n*Username* : '+par+'\n*Nama* : '+str(js2)+'\n*Bio* : '+str(js1)+'\n*Followers* : '+str(js3)+'\n*Following* :'+str(js4),
-                  "filename": 'png',
-                  "chatId": chatID
-                  }
-            answer = self.send_requests('sendFile', data)
-            return answer  
-
+    
     def processing(self):
         if self.dict_messages != []:
             for message in self.dict_messages:
@@ -130,8 +103,7 @@ class WABot():
                         return self.idn(id)
                     elif text[0].lower() == 'tr-id':
                         return self.en(id)
-                    elif text[0].lower() == 'ig':
-                        return self.ig(id)
+                   
                     elif text[0].lower() == 'start':
                         return self.start(id)
                    
