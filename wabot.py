@@ -123,7 +123,7 @@ class WABot():
                 "filename": "mantansobong.mp4",
                 "caption": "mantan sombong"
                     }
-            return self.send_requests('sendFile', data)a)
+            return self.send_requests('sendFile', data)
             
     
     def ig(self, chatID):
