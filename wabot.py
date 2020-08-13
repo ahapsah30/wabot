@@ -61,26 +61,7 @@ class WABot():
                 answer = self.send_requests('sendMessage', data)
                 return answer
 
-    def yts(self, chatID):
-        for message in self.dict_messages:
-            text = message['body']
-            import requests as r
-            import json
-            par = text[3:]
-            req= r.get('http://api.farzain.com/yt_search.php?id='+par+'&apikey=JsaChFteVJakyjBa0M5syf64z&')
-            js1 = req.json()[1]['title']
-            js2 = req.json()[1]['url']
-            js3 = req.json()[1]['videoThumbs']
-            js4 = req.json()[1]['videoId']
-            data = {
-                  "body": js3,
-                  "caption" : '🔎 *Hasil Pencarian Youtube Acak*\n\n*Judul Video* : '+js1+'\n\n*Url Video* : '+js2+'\n\n*Video ID* : '+js4,
-                  "filename": 'jpg',
-                  "chatId": chatID
-                  }
-
-            answer = self.send_requests('sendFile', data)
-            return answer 
+   
 
     def start(self, chatID):
         data = {
@@ -157,8 +138,7 @@ class WABot():
                         return self.ig(id)
                     elif text[0].lower() == 'start':
                         return self.start(id)
-                    elif text[0].lower() == 'yt':
-                        return self.yts(id)
+                   
                     elif text[0].lower() == 'tts':
                         return self.tts(id)
                     elif text[0].lower() == 'gs':
