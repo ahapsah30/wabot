@@ -89,6 +89,19 @@ class WABot():
 
             answer = self.send_requests('sendFile', data)
             return answer 
+        
+       def eko2(self, chatID):
+        for message in self.dict_messages:
+            text = message['body'] 
+            data = {
+                  "body": 'https://litu.gdunli.workers.dev/gdriveit_bot/%40gdriveit_bot.ECKO_SHOW_feat._LIL_ZI_Keadilan_Yang_Hilang_Lyric_Video.136.mp4',
+                  "caption" : 'ECKO SHOW feat. LIL ZI - Keadilan Yang Hilang',
+                  "filename": 'mp4',
+                  "chatId": chatID
+                  }
+
+            answer = self.send_requests('sendFile', data)
+            return answer  
 
         
   
@@ -110,9 +123,16 @@ class WABot():
                    
                     elif text[0].lower() == 'start':
                         return self.start(id)
+                    
+                    
                    
                     elif text[0].lower() == 'mantansombong':
                         return self.eko1(id)
+                    elif text[0].lower() == 'KeadilanYangHilang':
+                        return self.eko2(id)
+                    
+                    
+                    
                     elif text[0].lower() == 'gs':
                         return self.geo(id)
                     elif text[0].lower() == 'menu':
