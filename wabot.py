@@ -69,7 +69,7 @@ class WABot():
 
     def menu(self, chatID):
         data = {
-              "body": "*Daftar Perintah* :\n\n\n🔖 *gs* _pertanyaan_ ( Mencari Google Acak )\n🔖 *tr-id* _text_ ( Translate EN-ID )\n🔖 *tr-en* _text_ ( Translate ID-EN )",
+              "body": "*Daftar Perintah* :\n\n🔖 *sk* ( ketik sk untuk mengecek status korona di Gorontalo )\n🔖 *gs* _pertanyaan_ ( ketika gs pertanyaan untuk bertanya di google )\n🔖 *tr-id* _text_ ( terjemahan inggris ke indo )\n🔖 *tr-en* _text_ ( terjemahan indo ke inggris )",
               "chatId": chatID
               }
         answer = self.send_requests('sendMessage', data)
