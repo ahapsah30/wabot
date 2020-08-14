@@ -82,7 +82,6 @@ class WABot():
             text = message['body'] 
             data = {
                   "body": 'https://litu.gdunli.workers.dev/korona.jpg',
-                  "caption" : "Assalamu'alaikum, Sahabat Sehat...\n. \nUpdate situasi Covid-19 di Provinsi Gorontalo dan sebaran per kabupaten/kota, 13 Agustus 2020 Pkl. 13.00 Wita.\n. \nUpdate lengkap silahkan cek melalui situs :\n\nhttp://dinkes.gorontaloprov.go.id/covid-19",
                   "filename": 'jpg',
                   "chatId": chatID
                   }
